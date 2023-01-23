@@ -51,7 +51,7 @@ const fetchSubject = async (id)=>{
     }
 }
 
-const fetchAllSubjects = async (data)=>{
+const fetchAllSubjects = async ()=>{
     try {
             const exsitingSubjects = await Subject.find({});
             return exsitingSubjects;

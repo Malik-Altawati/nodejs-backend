@@ -13,8 +13,8 @@ transporter.verify((error,success)=>{
     if(error){
         console.log(error)
     }else{
-        console.log("Email ready for messages");
-        console.log(success)
+        console.log("✅ Email Connection Verified");
+        // console.log(success)
     }
 });
 

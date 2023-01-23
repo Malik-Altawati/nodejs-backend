@@ -26,5 +26,46 @@ const createNewStudent = async (data) =>{
     }
 }
 
+const updateStudent = async (id, body)=>{
+    try {
+            const student = await Student.findByIdAndUpdate(id, body);
+            return student;
+    } catch (error) {
+             throw error;
+    }
+}
 
-module.exports = { createNewStudent};
+const deleteStudent = async (id, body)=>{
+    try {
+            const student = await Student.findByIdAndDelete(id);
+            if (!student){
+                throw Error("student already deleted");
+            }
+            return student;
+    } catch (error) {
+             throw error;
+    }
+}
+
+const fetchStudent = async (id)=>{
+    try {
+            const fetchedStudent = await Student.findOne({"_id":id});
+            if (!fetchedStudent){
+                throw Error("invalid id");
+            }
+            return fetchedStudent;
+    } catch (error) {
+             throw error;
+    }
+}
+
+const fetchAllStudents = async ()=>{
+    try {
+            const exsitingStudents = await Student.find({});
+            return exsitingStudents;
+    } catch (error) {
+             throw error;
+    }
+}
+
+module.exports = { createNewStudent, updateStudent, fetchStudent, deleteStudent, fetchAllStudents};

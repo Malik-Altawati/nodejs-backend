@@ -51,7 +51,7 @@ const fetchGrade = async (id)=>{
     }
 }
 
-const fetchAllGrades = async (data)=>{
+const fetchAllGrades = async ()=>{
     try {
             const exsitingGrades = await Grade.find({});
             return exsitingGrades;
