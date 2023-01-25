@@ -3,6 +3,7 @@ const router = express.Router();
 const { createNewStudent, updateStudent,fetchStudent , deleteStudent, fetchAllStudents} = require("./controller");
 
 
+
 // create 
 router.post("/create", async(req,res) =>{
     try{
@@ -61,6 +62,7 @@ router.get("/", async(req,res) =>{
         res.status(400).send(error.message);
     }
 });
+
 
 
 module.exports = router;

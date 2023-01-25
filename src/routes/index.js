@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const auth = require("./../middleware/auth");
 
 const userRoutes = require("./../domains/user");
 const otpRoutes = require("./../domains/otp");
@@ -13,7 +14,7 @@ router.use("/otp", otpRoutes);
 
 router.use("/subject", subjectRoutes);
 router.use("/grade", gradeRoutes);
-router.use("/student", studentRoutes);
+router.use("/student",auth, studentRoutes);
 
 
 
