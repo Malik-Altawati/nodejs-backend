@@ -34,7 +34,6 @@ const createNewUser = async (data) =>{
         }
         // hash password
         const hashedPassword = await hashData(password);
-        console.log(hashedPassword)
         const newUser = new User({
             name,
             email,
