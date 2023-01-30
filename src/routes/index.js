@@ -4,6 +4,7 @@ const auth = require("./../middleware/auth");
 
 const userRoutes = require("./../domains/user");
 const otpRoutes = require("./../domains/otp");
+const emailVerificationRoutes = require("./../domains/email_verification");
 
 const subjectRoutes = require("./../domains/subject");
 const gradeRoutes = require("./../domains/grade");
@@ -13,6 +14,9 @@ const uploadRoutes = require("./../domains/upload");
 
 router.use("/user", userRoutes);
 router.use("/otp", otpRoutes);
+router.use("/email_verification", emailVerificationRoutes);
+
+
 router.use("/subject", subjectRoutes);
 router.use("/upload", uploadRoutes);
 router.use("/grade", gradeRoutes);
